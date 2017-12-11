@@ -12,17 +12,13 @@ var win = void 0;
 
 function createWindow() {
     // Create the browser window.
-    win = new BrowserWindow({ width: 1024, height: 600 ,autoHideMenuBar: true});
+    win = new BrowserWindow({width: 1024, height: 600, autoHideMenuBar: true});
 
     // and load the index.html of the app.
-    win.loadURL(url.format({
-        pathname: './index.html',
-        protocol: 'file:',
-        slashes: true
-    }));
+    win.loadURL(`file://${__dirname}/index.html`);
 
     // Open the DevTools.
-    //win.webContents.openDevTools()
+    win.webContents.openDevTools()
 
     // Emitted when the window is closed.
     win.on('closed', function () {
